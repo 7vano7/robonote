@@ -68,6 +68,10 @@ $(document).ready(function(){
                 	let td_2 = '<td class="table-text"><img src="icons/'+icon+'" class="img" /> <span class="">'+name+'</span></td>';
                 	let td_3 = '<td class="number"><a href="" data-id="'+result.number+'"><i class="fa fa-trash"></i></a></td>';
                     $('.table').append('<tr>'+td_1+td_2+td_3+'</tr>');
+                    $('.input-img').hide();
+					$('.record').css('padding-left', '10px');
+					$('.record').val('');
+
                 } else {
                     alert('Error');
                 }

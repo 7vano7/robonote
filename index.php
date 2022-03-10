@@ -22,26 +22,26 @@ require_once("header.php");
 ?>
 
 <div class="content">
+	<table class="table">
+		<tbody>
     	<?php $result = $mysql->query("SELECT * FROM `icons` ORDER BY `id` ASC"); ?>
     	<?php if($result->num_rows > 0): ?>
-    	<table class="table">
-    		<tbody>
-    			<?php while($row = $result->fetch_assoc()) :?>
-    				<tr class="item">
-    					<td class="number">
-    						<?php echo $row['id']?>
-    					</td>
-    					<td class="table-text">
-    						<img src="icons<?php echo $row['path'] ?>" class="img" /> <span><?php echo $row['name'] ?><span>
-    					</td>
-    					<td  class="number">
-    						<a href=""><i class="fa fa-trash" data-id="<?=$row['id']?>"></i></a>
-    					</td>
-    				</tr>	
-    			<?php endwhile?>
-    		</tbody>
-    	</table>
-    <?php endif ?>
+			<?php while($row = $result->fetch_assoc()) :?>
+				<tr class="item">
+					<td class="number">
+						<?php echo $row['id']?>
+					</td>
+					<td class="table-text">
+						<img src="icons<?php echo $row['path'] ?>" class="img" /> <span><?php echo $row['name'] ?><span>
+					</td>
+					<td  class="number">
+						<a href=""><i class="fa fa-trash" data-id="<?=$row['id']?>"></i></a>
+					</td>
+				</tr>	
+			<?php endwhile?>
+    	<?php endif ?>
+    </tbody>
+	</table>
     <form action="" method="post">
     	<div class="input-icon">
     		<img src="" class="input-img" />
